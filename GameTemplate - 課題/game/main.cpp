@@ -8,7 +8,7 @@
 #include "Floor.h"
 
 Player* player;
-Floor* floor;
+Floor* g_floor;
 
 //-----------------------------------------------------------------------------
 // Name: ゲームを初期化。
@@ -16,9 +16,9 @@ Floor* floor;
 void Init()
 {
 	player = new Player;
-	floor = new Floor;
+	g_floor = new Floor;
 	player->Start();
-	floor->Start();
+	g_floor->Start();
 }
 //-----------------------------------------------------------------------------
 // Name: 描画処理。
@@ -31,7 +31,7 @@ VOID Render()
 	g_pd3dDevice->BeginScene();
 
 	player->Render();
-	floor->R
+	g_floor->Render();
 
 	// シーンの描画終了。
 	g_pd3dDevice->EndScene();
@@ -44,6 +44,7 @@ VOID Render()
 void Update()
 {
 	player->Update();
+	g_floor->Update();
 }
 //-----------------------------------------------------------------------------
 //ゲームが終了するときに呼ばれる処理。

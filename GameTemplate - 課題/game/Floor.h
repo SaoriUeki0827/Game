@@ -19,3 +19,4 @@ private:
 	D3DXVECTOR3				position;		//座標。
 	D3DXMATRIX				mWorld;			//ワールド行列。
 };
+extern Floor* g_floor;
