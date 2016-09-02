@@ -619,6 +619,7 @@ void SkinModelData::LoadModelData( const char* filePath, Animation* anim )
 		&frameRoot,
 		&pAnimController
 	);
+	
 	//m_pAnimController->(0);
 	SetupBoneMatrixPointers(frameRoot, frameRoot);
 	if (anim && pAnimController) {
