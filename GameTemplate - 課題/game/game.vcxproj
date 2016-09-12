@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Floor.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="lib\Animation.h" />
     <ClInclude Include="lib\Camera.h" />

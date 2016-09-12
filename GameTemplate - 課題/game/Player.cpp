@@ -28,10 +28,6 @@ Player::~Player()
 void Player::Start()
 {
 	//カメラ初期化。
-	camera.Init();
-	camera.SetEyePt(D3DXVECTOR3(0.0f, 11.0f, 12.0f));
-	camera.SetLookatPt(D3DXVECTOR3(0.0f, 0.5f, 0.0f));
-	camera.Update();
 
 	//ライトを初期化。
 	light.SetDiffuseLightDirection(0, D3DXVECTOR4(0.707f, 0.0f, -0.707f, 1.0f));
@@ -61,7 +57,6 @@ void Player::Start()
  */
 void Player::Update()
 {
-	camera.Update();
 		if (GetAsyncKeyState(VK_LEFT))
 		{
 			if (!animeFlg){
@@ -113,5 +108,5 @@ void Player::Update()
  */
 void Player::Render()
 {
-	model.Draw(&camera.GetViewMatrix(), &camera.GetProjectionMatrix());
+	model.Draw(&camera->GetViewMatrix(), &camera->GetProjectionMatrix());
 }

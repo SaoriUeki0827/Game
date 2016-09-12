@@ -12,7 +12,6 @@ public:
 	void Update();
 	void Render();
 private:
-	Camera camera;
 	SkinModel model;
 	SkinModelData modelData;
 	Light light;
@@ -20,3 +19,4 @@ private:
 	D3DXMATRIX				mWorld;			//ワールド行列。
 };
 extern Floor* g_floor;
+extern Camera* camera;

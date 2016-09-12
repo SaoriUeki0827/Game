@@ -15,8 +15,8 @@ public:
 	void Start();
 	void Update();
 	void Render();
+	D3DXVECTOR3 GetPos(){ return position; }
 private:
-	Camera camera;
 	SkinModel model;
 	SkinModelData modelData;
 	Animation animation;
@@ -29,3 +29,4 @@ private:
 };
 
 extern Player* player;
+extern Camera* camera;

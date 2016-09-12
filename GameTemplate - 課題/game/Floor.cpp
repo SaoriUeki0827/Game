@@ -49,12 +49,12 @@ void Floor::Start()
 */
 void Floor::Update()
 {
-	model.UpdateWorldMatrix(position, D3DXQUATERNION(0.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR3(10.0f, 10.0f, 10.0f));
+	model.UpdateWorldMatrix(position, D3DXQUATERNION(0.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR3(1.0f, 1.0f, 1.0f));
 }
 /*!
 * @brief	•`‰æB
 */
 void Floor::Render()
 {
-	model.Draw(&camera.GetViewMatrix(), &camera.GetProjectionMatrix());
+	model.Draw(&camera->GetViewMatrix(), &camera->GetProjectionMatrix());
 }
