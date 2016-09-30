@@ -63,7 +63,7 @@ void Player::Update()
 				animation.PlayAnimation(1, 0.1f);
 				animeFlg = true;
 			}
-			position.x += 0.02f;
+			position.x += 0.2f;
 			D3DXQuaternionRotationAxis(&rotate, &D3DXVECTOR3(0.0f, 1.0f, 0.0f), D3DXToRadian(90.0f));
 		}
 		else if (GetAsyncKeyState(VK_RIGHT))
@@ -72,7 +72,7 @@ void Player::Update()
 				animation.PlayAnimation(1, 0.1f);
 				animeFlg = true;
 			}
-			position.x -= 0.02f;
+			position.x -= 0.2f;
 			D3DXQuaternionRotationAxis(&rotate, &D3DXVECTOR3(0.0f, 1.0f, 0.0f), D3DXToRadian(-90.0f));
 		}
 		else if (GetAsyncKeyState(VK_DOWN))
@@ -81,7 +81,7 @@ void Player::Update()
 				animation.PlayAnimation(1, 0.1f);
 				animeFlg = true;
 			}
-			position.z += 0.02f;
+			position.z += 0.2f;
 			D3DXQuaternionRotationAxis(&rotate, &D3DXVECTOR3(0.0f, 1.0f, 0.0f), D3DXToRadian(0.0f));
 		}
 		else if (GetAsyncKeyState(VK_UP))
@@ -90,7 +90,7 @@ void Player::Update()
 				animation.PlayAnimation(1, 0.1f);
 				animeFlg = true;
 			}
-			position.z -= 0.02f;
+			position.z -= 0.2f;
 			D3DXQuaternionRotationAxis(&rotate, &D3DXVECTOR3(0.0f, 1.0f, 0.0f), D3DXToRadian(180.0f));
 		}
 		else

@@ -64,6 +64,7 @@ struct VS_OUTPUT
     float3  Normal			: NORMAL;
     float2  Tex0   			: TEXCOORD0;
     float3	Tangent			: TEXCOORD1;	//接ベクトル
+	float4	worldPos		: TEXCOORD2;
 };
 /*!
  *@brief	ワールド座標とワールド法線をスキン行列から計算する。
@@ -140,8 +141,10 @@ float4 PSMain( VS_OUTPUT In ) : COLOR
 {
 	float4 color = tex2D(g_diffuseTextureSampler, In.Tex0);
 	float3 normal = In.Normal;
-		
+	//float3 pos = In.Pos;
+
 	float4 lig = DiffuseLight(normal);
+	//lig += SpecularLight(normal, pos);
 	color *= lig;
 	
 	return color;

@@ -6,10 +6,12 @@
 #include "lib/Light.h"
 #include "Player.h"
 #include "Floor.h"
+#include "Map.h"
 
 Player* player;
 Floor* g_floor;
 Camera* camera;
+Map* map;
 D3DXVECTOR3	toPosition;
 
 //-----------------------------------------------------------------------------
@@ -20,8 +22,10 @@ void Init()
 	camera = new Camera;
 	player = new Player;
 	g_floor = new Floor;
+	map = new Map;
 	player->Start();
 	g_floor->Start();
+	map->Start();
 	camera->Init();
 	camera->SetEyePt(player->GetPos()+D3DXVECTOR3(0.0f,3.0f,6.0f));
 	camera->SetLookatPt(player->GetPos());
@@ -37,9 +41,9 @@ VOID Render()
 	g_pd3dDevice->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 0, 255), 1.0f, 0);
 	//シーンの描画開始。
 	g_pd3dDevice->BeginScene();
-
 	player->Render();
 	g_floor->Render();
+	map->Render();
 
 	// シーンの描画終了。
 	g_pd3dDevice->EndScene();
@@ -55,6 +59,7 @@ void Update()
 {
 	player->Update();
 	g_floor->Update();
+	map->Update();
 
 	D3DXVECTOR4 toPositionOut = toPosition;
 	D3DXVECTOR3 newCameraPos;
